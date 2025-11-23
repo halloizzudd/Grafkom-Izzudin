@@ -128,9 +128,10 @@ const meshZ = mergeMeshes(meshZ_parts);
 
 // Generate Angka 3
 const mesh3_parts = [
-  extrudePolygon(outlines['3_top'], 0.4, [0.4, 0.3, 1.0]),
-  extrudePolygon(outlines['3_mid'], 0.4, [0.4, 0.3, 1.0]),
-  extrudePolygon(outlines['3_bot'], 0.4, [0.4, 0.3, 1.0])
+  extrudePolygon(outlines['3_top'],   0.4, [0.4, 0.3, 1.0]), // Ungu
+  extrudePolygon(outlines['3_mid'],   0.4, [0.4, 0.3, 1.0]),
+  extrudePolygon(outlines['3_bot'],   0.4, [0.4, 0.3, 1.0]),
+  extrudePolygon(outlines['3_spine'], 0.4, [0.4, 0.3, 1.0])  // Bagian baru (tiang kanan)
 ];
 const mesh3 = mergeMeshes(mesh3_parts);
 
@@ -207,7 +208,7 @@ canvas.addEventListener("dblclick", () => {
 // 6. RENDER LOOP
 // ==========================================
 gl.enable(gl.DEPTH_TEST);
-gl.enable(gl.CULL_FACE);
+gl.disable(gl.CULL_FACE);
 
 function render(time) {
   // Responsive canvas
@@ -230,7 +231,7 @@ function render(time) {
   // Model Rotate (Global scene rotation)
   let model = M4.identity();
   model = M4.rotateX(model, state.rotX);
-  model = M4.rotateY(model, state.rotY + time * 0.0005); // Sedikit auto-rotate
+  model = M4.rotateY(model, state.rotY + time * 0.0004); // Sedikit auto-rotate
 
   // Normal Matrix
   const normMat = M4.normalMat3(model);
