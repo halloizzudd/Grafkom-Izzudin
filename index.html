@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Personalized Glyph Rendering — Iz3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">Personalized Glyph Rendering</div>
+    <div class="subtitle">Iz3 — crafted for Izzudin</div>
+  </header>
+
+  <main class="stage">
+    <canvas id="glcanvas"></canvas>
+    <aside class="panel">
+      <h3>Preview</h3>
+      <p class="desc">Glyph: <strong>Iz3</strong></p>
+      <p class="desc small">Interaksi: Drag = rotate • Wheel = zoom • Double-click = reset</p>
+      <div class="legend">
+        <div class="swatch sw1"></div><div>Letter I</div>
+        <div class="swatch sw2"></div><div>Letter z</div>
+        <div class="swatch sw3"></div><div>Digit 3</div>
+      </div>
+      <footer class="credits">Made for assignment — clean WebGL, no libs</footer>
+    </aside>
+  </main>
+
+  <script src="shaders.js"></script>
+  <script src="glyph.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
